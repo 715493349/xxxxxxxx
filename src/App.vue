@@ -1,30 +1,28 @@
+<!--
+ * @Author: luo_h603
+ * @Date: 2022-07-14 16:29:45
+ * @LastEditTime: 2022-07-14 20:11:10
+ * @LastEditors: luo_h603
+ * @Description: 
+ * God help those who help themselves
+-->
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
-
-nav {
-  padding: 30px;
+.flex-flaot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.flex {
+  display: flex;
+  align-items: center;
 }
 </style>
