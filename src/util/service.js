@@ -1,7 +1,7 @@
 /*
  * @Author: luo_h603
  * @Date: 2022-07-18 14:43:19
- * @LastEditTime: 2022-07-18 14:59:56
+ * @LastEditTime: 2022-07-19 11:07:39
  * @LastEditors: luo_h603
  * @Description: 
  * God help those who help themselves
@@ -9,6 +9,7 @@
 import axios from 'axios';
 import { ElLoading } from 'element-plus';
 import { ElMessage } from 'element-plus'
+import store from '../store/index.js'
 
 // 创建实例
 // const loadingObj = new ElLoading({
@@ -23,10 +24,7 @@ const Service = axios.create({
     timeout: 5000, // 请求超时时间
     headers: {
         'Content-Type': 'application/json;charset=UTF-8',
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        // 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-        // 'Access-Control-Allow-Credentials': 'true',
+        'Authorization': store.state.userInfo.userInfo.token
     },
 });
 
@@ -67,6 +65,8 @@ Service.interceptors.response.use(
     }
 );
 
+export default Service;
+
 // post请求
 // export const post = config => {
 //         return Service.post({
@@ -75,18 +75,19 @@ Service.interceptors.response.use(
 //             data: config.data,
 //         })
 //     }
-export function post(config) {
-    return Service({
-        ...config,
-        method: 'post',
-        data: config.data,
-    })
-}
 
-export function get(config) {
-    return Service({
-        ...config,
-        method: 'get',
-        data: config.data,
-    })
-}
+// export function post(config) {
+//     return Service({
+//         ...config,
+//         method: 'post',
+//         data: config.data,
+//     })
+// }
+
+// export function get(config) {
+//     return Service({
+//         ...config,
+//         method: 'get',
+//         data: config.data,
+//     })
+// }

@@ -1,7 +1,7 @@
 /*
  * @Author: luo_h603
  * @Date: 2022-07-14 16:29:45
- * @LastEditTime: 2022-07-14 16:32:21
+ * @LastEditTime: 2022-07-19 10:10:48
  * @LastEditors: luo_h603
  * @Description: 
  * God help those who help themselves
@@ -63,7 +63,7 @@ const router = createRouter({
 
 // 前置路由守卫
 router.beforeEach((to, from, next) => {
-    console.log('store', store.state.userInfo);
+    // console.log('store', store.state.userInfo);
     if (!store.state.userInfo.userInfo.username) {
         if (to.path === '/login') {
             next();

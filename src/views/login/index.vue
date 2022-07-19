@@ -1,7 +1,7 @@
 <!--
  * @Author: luo_h603
  * @Date: 2022-07-14 20:00:33
- * @LastEditTime: 2022-07-18 19:32:19
+ * @LastEditTime: 2022-07-19 10:45:32
  * @LastEditors: luo_h603
  * @Description: 
  * God help those who help themselves
@@ -82,9 +82,9 @@ export default {
       loginApi(data.loginData).then((res) => {
         // console.log(res);
         if (res.data) {
-          store.commit("setUserInfo", data.loginData);
+          store.commit("setUserInfo", res.data);
           // 登录成功存储到本地存储中
-          localStorage.setItem("loginData", JSON.stringify(data.loginData));
+          localStorage.setItem("loginData", JSON.stringify(res.data));
           // 跳转
           router.push({
             path: "/",
